@@ -229,9 +229,12 @@ export default function Home() {
                     <span>Results in 24 hours</span>
                   </li>
                 </ul>
-                <button className="w-full py-3 bg-slate-900 text-white font-medium rounded-lg hover:bg-slate-800 transition-colors">
+                <a
+                  href="/checkout"
+                  className="block text-center w-full py-3 bg-slate-900 text-white font-medium rounded-lg hover:bg-slate-800 transition-colors"
+                >
                   Get Your Audit
-                </button>
+                </a>
               </div>
 
               {/* Continuous Monitoring */}
@@ -270,9 +273,12 @@ export default function Home() {
                     <span className="text-white font-medium">Priority support</span>
                   </li>
                 </ul>
-                <button className="w-full py-3 bg-white text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors">
+                <a
+                  href="/checkout"
+                  className="block text-center w-full py-3 bg-white text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors"
+                >
                   Start Monitoring
-                </button>
+                </a>
               </div>
             </div>
 

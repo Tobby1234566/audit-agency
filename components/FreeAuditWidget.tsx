@@ -108,12 +108,38 @@ export default function FreeAuditWidget() {
             <p className="text-xs text-blue-700 mb-4">
               Get client-side paywall testing, database vulnerability analysis, line-by-line code fixes, and a branded PDF report.
             </p>
-            <a
-              href="#pricing"
-              className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-sm rounded-lg hover:bg-blue-700 transition-colors"
+            <button
+              onClick={async () => {
+                setLoading(true);
+                setError('');
+                try {
+                  const res = await fetch('/api/audit/full', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ url: result.url })
+                  });
+                  const data = await res.json();
+                  if (!res.ok) throw new Error(data.error || 'Full audit failed');
+
+                  // Save audit ID to localStorage for dashboard
+                  const auditHistory = JSON.parse(localStorage.getItem('auditHistory') || '[]');
+                  if (!auditHistory.includes(data.audit.id)) {
+                    auditHistory.push(data.audit.id);
+                    localStorage.setItem('auditHistory', JSON.stringify(auditHistory));
+                  }
+
+                  // Navigate to report
+                  window.location.href = data.reportUrl;
+                } catch (err: any) {
+                  setError(err.message);
+                  setLoading(false);
+                }
+              }}
+              disabled={loading}
+              className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-sm rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50"
             >
-              Get Full Audit ($199)
-            </a>
+              {loading ? 'Running Full Scan...' : 'Run Full 90-Point Audit (Free)'}
+            </button>
           </div>
         </div>
       )}

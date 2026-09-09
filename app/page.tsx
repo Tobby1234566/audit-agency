@@ -200,7 +200,7 @@ export default function Home() {
               <div className="bg-white rounded-2xl shadow-lg p-8 border-2 border-slate-200">
                 <h3 className="text-2xl font-bold text-slate-900 mb-2">One-Time Audit</h3>
                 <div className="mb-6">
-                  <span className="text-5xl font-bold text-slate-900">$199</span>
+                  <span className="text-5xl font-bold text-slate-900">₦50,000</span>
                   <span className="text-slate-600 ml-2">one-off</span>
                 </div>
                 <ul className="space-y-3 mb-8 text-slate-600">
@@ -244,7 +244,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-bold mb-2">Continuous Monitoring</h3>
                 <div className="mb-6">
-                  <span className="text-5xl font-bold">$99</span>
+                  <span className="text-5xl font-bold">₦25,000</span>
                   <span className="text-blue-200 ml-2">/month</span>
                 </div>
                 <ul className="space-y-3 mb-8 text-blue-100">

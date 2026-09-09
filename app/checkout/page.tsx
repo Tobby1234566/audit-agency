@@ -89,7 +89,7 @@ export default function CheckoutPage() {
                       : 'border-slate-200 hover:border-slate-300'
                   }`}
                 >
-                  <div className="font-bold text-lg text-slate-900 mb-1">${PLANS.ONE_TIME.price} One-Time</div>
+                  <div className="font-bold text-lg text-slate-900 mb-1">₦{PLANS.ONE_TIME.price.toLocaleString()} One-Time</div>
                   <div className="text-sm text-slate-600">{PLANS.ONE_TIME.name}</div>
                 </button>
                 <button
@@ -101,7 +101,7 @@ export default function CheckoutPage() {
                       : 'border-slate-200 hover:border-slate-300'
                   }`}
                 >
-                  <div className="font-bold text-lg text-slate-900 mb-1">${PLANS.SUBSCRIPTION.price}/month</div>
+                  <div className="font-bold text-lg text-slate-900 mb-1">₦{PLANS.SUBSCRIPTION.price.toLocaleString()}/month</div>
                   <div className="text-sm text-slate-600">{PLANS.SUBSCRIPTION.name}</div>
                 </button>
               </div>
@@ -139,7 +139,7 @@ export default function CheckoutPage() {
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between">
                   <span className="text-slate-600">Amount to Pay:</span>
-                  <span className="font-bold text-slate-900 text-xl">${plan.price}</span>
+                  <span className="font-bold text-slate-900 text-xl">₦{plan.price.toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-slate-600">Bank Name:</span>
